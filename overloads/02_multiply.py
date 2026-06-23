@@ -17,6 +17,7 @@ def multiply(left: int, right: str) -> str: ...
 def multiply(left: str, right: int) -> str: ...
 
 def multiply(left: int | str, right: int | str) -> int | str:
+    # Type narrowing — “open problem”
     return left * right
 
 
