@@ -14,3 +14,4 @@ player: PlayerStatus = {
 }
 
 print(player["nick"])
+print(type(player))
