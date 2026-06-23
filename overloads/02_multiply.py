@@ -22,6 +22,7 @@ def multiply(left: int | str, right: int | str) -> int | str:
     if isinstance(left, str):
         if isinstance(right, str):
             raise TypeError
+        return left * right
     return left * right
 
 
