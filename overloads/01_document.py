@@ -14,7 +14,11 @@ class Document:
 
     def __getitem__(self, line_index: int | slice) -> int | list[str]:
         text = self.path.read_text().splitlines()
-        return text[line_index]
+        contents = text[line_index]
+        if isinstance(line_index, int):
+            return len(contents)
+        else:
+            return contents
 
 
 doc = Document(Path(__file__))
