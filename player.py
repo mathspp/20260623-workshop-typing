@@ -23,13 +23,6 @@ def process_action(
 @overload
 def process_action(
     player_status: dict[str, Any],
-    action: Literal[Action.TALK],
-    message: str,
-) -> dict[str, Any]: ...
-
-@overload
-def process_action(
-    player_status: dict[str, Any],
     action: Literal[Action.SLEEP],
 ) -> dict[str, Any]: ...
 
@@ -37,6 +30,13 @@ def process_action(
 def process_action(
     player_status: dict[str, Any],
     action: Literal[Action.LEVEL_UP],
+) -> dict[str, Any]: ...
+
+@overload
+def process_action(
+    player_status: dict[str, Any],
+    action: Literal[Action.TALK],
+    message: str,
 ) -> dict[str, Any]: ...
 
 def process_action(
