@@ -17,13 +17,14 @@ def multiply(left: int, right: str) -> str: ...
 def multiply(left: str, right: int) -> str: ...
 
 def multiply(left: int | str, right: int | str) -> int | str:
-    # Type narrowing — “open problem”
+    # Type narrowing — “open problem”: maybe `TypeIs`?
     if isinstance(left, int) and isinstance(right, int):
         return left * right
     if isinstance(left, str) and isinstance(right, int):
         return left * right
     if isinstance(left, int) and isinstance(right, str):
         return left * right
+    raise TypeError
 
 
 reveal_type(multiply(3, 4))  # Should be `int`
