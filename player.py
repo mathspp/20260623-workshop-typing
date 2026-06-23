@@ -18,6 +18,7 @@ def process_action(
     player_status: dict[str, Any],
     action: Literal[Action.MOVE],
     dx: int, dy: int,
+    /,
 ) -> dict[str, Any]: ...
 
 @overload
@@ -37,9 +38,8 @@ def process_action(
     player_status: dict[str, Any],
     action: Literal[Action.TALK],
     message: str,
+    /,
 ) -> dict[str, Any]: ...
-
-process_action({}, Action.TALK, message="hey")  # <--
 
 def process_action(
     player_status: dict[str, Any],
