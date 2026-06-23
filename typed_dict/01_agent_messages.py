@@ -2,12 +2,13 @@
 Use a `TypedDict` to encode the structure of the dictionaries that can be added to the list `context`.
 """
 
-from typing import Any, TypedDict
+from typing import Any, TypedDict, NotRequired
 
 
 class Message(TypedDict):
     role: str
-    content: str
+    content: str | list[dict[str, str]]
+    status: NotRequired[str]
 
 
 context: list[Message] = []
