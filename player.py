@@ -39,6 +39,8 @@ def process_action(
     message: str,
 ) -> dict[str, Any]: ...
 
+process_action({}, Action.TALK, message="hey")  # <--
+
 def process_action(
     player_status: dict[str, Any],
     action: Action,
