@@ -5,6 +5,10 @@ Use a `TypedDict` to encode the structure of the dictionaries that can be added 
 from typing import Any
 
 
+class Message(...):
+    ...
+
+
 context: list[dict[str, Any]] = []
 
 context.append(
