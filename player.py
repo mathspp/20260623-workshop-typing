@@ -7,7 +7,10 @@ from typing import Any
 
 
 class Action(StrEnum):
-
+    MOVE = auto()
+    TALK = auto()
+    SLEEP = auto()
+    LEVEL_UP = auto()
 
 
 def process_action(
