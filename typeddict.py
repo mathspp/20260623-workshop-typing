@@ -10,7 +10,8 @@ class PlayerStatus(TypedDict, total=False):
 
 
 class PlayerStatus(TypedDict):
-    name: ReadOnly[str]  # 3.13+
+    # name: ReadOnly[str]  # 3.13+
+    name: str
     level: int
     position: tuple[int, int]
     status_condition: NotRequired[str]
