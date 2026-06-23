@@ -10,8 +10,7 @@ class PlayerStatus(TypedDict):
 player: PlayerStatus = {
     "name": "rgs",
     "level": 3,
-    "position": (3, 0),
 }
 
-print(player["nick"])
+# print(player["nick"])
 print(type(player))
