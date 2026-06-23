@@ -18,6 +18,7 @@ def multiply(left: str, right: int) -> str: ...
 
 def multiply(left: int | str, right: int | str) -> int | str:
     # Type narrowing — “open problem”: maybe `TypeIs`?
+    # (TypeGuard)
     if isinstance(left, int) and isinstance(right, int):
         return left * right
     if isinstance(left, str) and isinstance(right, int):
@@ -37,4 +38,5 @@ def my_function() -> list[str] | None:
     raise NotImplementedError
 
 variable = my_function()
+assert variable is not None
 print(len(variable))
