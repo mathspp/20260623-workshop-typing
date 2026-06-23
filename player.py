@@ -53,5 +53,3 @@ process_action(player, Action.MOVE, 1, 1)
 process_action(player, Action.TALK, "Hello!")
 process_action(player, Action.SLEEP)
 process_action(player, Action.LEVEL_UP)
-
-process_action(player, Action.SLEEP, "Hello!", 1, 1, True, [])
