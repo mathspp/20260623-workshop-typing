@@ -14,6 +14,24 @@ context: list[Message] = []
 
 context.append(
     {
+        "role": "assistant",
+        "content": [
+            {
+                "type": "text",
+                "text": "Sure, here's a joke:\n",
+            },
+            {
+                "type": "text",
+                "text": "What's brown and sticky..? A stick!",
+            }
+        ],
+        "status": "completed",  # Could also be 'in_progress'.
+    }
+)
+
+
+context.append(
+    {
         "role": "user",
         "content": "Tell me a joke.",
     }
