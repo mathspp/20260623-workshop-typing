@@ -19,9 +19,9 @@ class Document:
 
 doc = Document(Path(__file__))
 print(doc[7])
-reveal_type(doc[7])  # Should be `str`
+# reveal_type(doc[7])  # Should be `str`
 
 print("-" * 30)
 
 print(doc[10:17])
-reveal_type(doc[10:17])  # Should be `list[str]`
+# reveal_type(doc[10:17])  # Should be `list[str]`
