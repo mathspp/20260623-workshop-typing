@@ -15,11 +15,13 @@ class PlayerStatus(TypedDict):
     position: tuple[int, int]
     status_condition: NotRequired[str]
 
+
 player: PlayerStatus = {
     "name": "rgs",
     "level": 3,
     "position": (3, 0),
 }
 player["name"] = "rodrigo"
+print(player)
 
 print(player["position"])
