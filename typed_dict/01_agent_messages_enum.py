@@ -2,18 +2,22 @@
 Use a `TypedDict` to encode the structure of the dictionaries that can be added to the list `context`.
 """
 
-from typing import Any, TypedDict, NotRequired, Literal
+from typing import Any, TypedDict, NotRequired
+from enum import StrEnum
 
+class Role(StrEnum):
+    user = "user"
+    assistant = "assistant"
 
-class ContentDict(TypedDict):
-    type: Literal["text"]
+class Content(TypedDict):
+    type: str
     text: str
 
-
 class Message(TypedDict):
-    role: str
-    content: str | list[ContentDict]
-    status: NotRequired[Literal["completed", "in_progress"]]
+    role: Role 
+    content: str | list[Content]
+    status: NotRequired[str]
+
 
 
 context: list[Message] = []
