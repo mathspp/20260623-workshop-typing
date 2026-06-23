@@ -3,7 +3,7 @@ Part of the implementation of a game.
 """
 
 from enum import StrEnum, auto
-from typing import Any, Literal
+from typing import Any, Literal, overload
 
 
 class Action(StrEnum):
@@ -13,27 +13,32 @@ class Action(StrEnum):
     LEVEL_UP = auto()
 
 
+@overload
 def process_action(
     player_status: dict[str, Any],
     action: Literal[Action.MOVE],
     dx: int, dy: int,
 ) -> dict[str, Any]: ...
 
+@overload
 def process_action(
     player_status: dict[str, Any],
     action: Literal[Action.TALK],
     message: str,
 ) -> dict[str, Any]: ...
 
+@overload
 def process_action(
     player_status: dict[str, Any],
     action: Literal[Action.SLEEP],
 ) -> dict[str, Any]: ...
 
+@overload
 def process_action(
     player_status: dict[str, Any],
     action: Literal[Action.LEVEL_UP],
 ) -> dict[str, Any]: ...
+
 
 def process_action(
     player_status: dict[str, Any],
