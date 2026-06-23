@@ -9,10 +9,10 @@ class PlayerStatus(TypedDict):
 """
 
 class PlayerStatus(TypedDict, total=False):
-    name: str
-    level: int
-    position: tuple[int, int]
-    status_condition: NotRequired[str]
+    name: Required[str]
+    level: Required[int]
+    position: Required[tuple[int, int]]
+    status_condition: str
 
 
 player: PlayerStatus = {
