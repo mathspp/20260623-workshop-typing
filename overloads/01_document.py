@@ -12,13 +12,13 @@ class Document:
     def __init__(self, path: Path) -> None:
         self.path = path
 
-    def __getitem__(self, line_index: int | slice) -> str | list[str]:
+    def __getitem__(self, line_index: int | slice) -> int | list[str]:
         text = self.path.read_text().splitlines()
         return text[line_index]
 
 
 doc = Document(Path(__file__))
-print("\n".join(doc[7]))
+print(doc[7])
 # reveal_type(doc[7])  # Should be `str`
 
 print("-" * 30)
