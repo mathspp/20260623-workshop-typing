@@ -6,8 +6,8 @@ from typing import Any, TypedDict, NotRequired
 from enum import StrEnum
 
 class Role(StrEnum):
-    user = "user"
-    assistant = "assistant"
+    USER = "user"
+    ASSISTANT = "assistant"
 
 class Content(TypedDict):
     type: str
