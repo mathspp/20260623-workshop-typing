@@ -9,10 +9,10 @@ from pathlib import Path
 from typing import Any, reveal_type
 
 class Document:
-    def __init__(self, path: Any) -> Any:
+    def __init__(self, path: Path) -> None:
         self.path = path
 
-    def __getitem__(self, line_index: Any) -> Any:
+    def __getitem__(self, line_index: int | slice) -> str | list[str]:
         text = self.path.read_text().splitlines()
         return text[line_index]
 
