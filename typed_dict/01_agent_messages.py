@@ -22,7 +22,7 @@ context.append(
                 "text": "Sure, here's a joke:\n",
             },
             {
-                "tye": "text",
+                "type": "text",
                 "text": "What's brown and sticky..? A stick!",
             }
         ],
