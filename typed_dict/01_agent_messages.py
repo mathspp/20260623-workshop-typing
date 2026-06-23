@@ -5,9 +5,14 @@ Use a `TypedDict` to encode the structure of the dictionaries that can be added 
 from typing import Any, TypedDict, NotRequired
 
 
+class ContentDict(TypedDict):
+    type: str
+    text: str
+
+
 class Message(TypedDict):
     role: str
-    content: str | list[dict[str, str]]
+    content: str | list[ContentDict]
     status: NotRequired[str]
 
 
