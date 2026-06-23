@@ -39,7 +39,6 @@ def process_action(
     action: Literal[Action.LEVEL_UP],
 ) -> dict[str, Any]: ...
 
-
 def process_action(
     player_status: dict[str, Any],
     action: Action,
