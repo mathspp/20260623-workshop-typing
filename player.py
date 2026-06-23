@@ -3,7 +3,7 @@ Part of the implementation of a game.
 """
 
 from enum import StrEnum, auto
-from typing import Any
+from typing import Any, Literal
 
 
 class Action(StrEnum):
@@ -15,7 +15,7 @@ class Action(StrEnum):
 
 def process_action(
     player_status: dict[str, Any],
-    action: str,
+    action: Literal["move", "talk", "sleep"],
     *args: int | str,
 ) -> dict[str, Any]:
     match action:
@@ -43,7 +43,7 @@ player = {
     "level": 3,
     "position": (3, 0),
 }
-process_action(player, "move", 1, 1)
+process_action(player, Action.MOVE, 1, 1)
 process_action(player, "talk", "Hello!")
 process_action(player, "sleep")
 process_action(player, "level_up")
