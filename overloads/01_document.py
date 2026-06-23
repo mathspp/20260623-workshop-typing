@@ -23,5 +23,5 @@ print(doc[7])
 
 print("-" * 30)
 
-print(doc[10:17])
+print("\n".join(doc[10:17]))
 # reveal_type(doc[10:17])  # Should be `list[str]`
