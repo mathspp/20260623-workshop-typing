@@ -38,6 +38,12 @@ def process_action(
                 "status_condition": "sleeping",
             }
 
+        case "level_up":
+            return {
+                **player_status,
+                "level": player_status["level"] + 1,
+            }
+
 player = {
     "name": "rgs",
     "level": 3,
