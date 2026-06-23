@@ -13,17 +13,13 @@ class Document:
         self.path = path
 
     @overload
-    def __getitem__(self, line_index: int) -> int: ...
+    def __getitem__(self, line_index: int) -> str: ...
     @overload
     def __getitem__(self, line_index: slice) -> list[str]: ...
 
-    def __getitem__(self, line_index: int | slice) -> int | list[str]:
+    def __getitem__(self, line_index: int | slice) -> str | list[str]:
         text = self.path.read_text().splitlines()
-        contents = text[line_index]
-        if isinstance(line_index, int):
-            return len(contents)
-        else:
-            return contents
+        return text[line_index]
 
 
 doc = Document(Path(__file__))
