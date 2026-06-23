@@ -6,11 +6,16 @@ types when you run the type checker.
 """
 
 from pathlib import Path
-from typing import Any, reveal_type
+from typing import Any, overload, reveal_type
 
 class Document:
     def __init__(self, path: Path) -> None:
         self.path = path
+
+    @overload
+    def __getitem__(self, line_index: int) -> int: ...
+    @overload
+    def __getitem__(self, line_index: slice) -> list[str]: ...
 
     def __getitem__(self, line_index: int | slice) -> int | list[str]:
         text = self.path.read_text().splitlines()
