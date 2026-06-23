@@ -12,5 +12,4 @@ player: PlayerStatus = {
     "level": 3,
 }
 
-# print(player["nick"])
-print(type(player))
+print(player["position"])
