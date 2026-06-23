@@ -31,3 +31,10 @@ reveal_type(multiply(3, 4))  # Should be `int`
 reveal_type(multiply(3, "4"))  # Should be `str`
 reveal_type(multiply("3", 4))  # Should be `str`
 reveal_type(multiply("3", "4"))  # Should be disallowed
+
+
+def my_function() -> list[str] | None:
+    raise NotImplementedError
+
+variable = my_function()
+print(len(variable))
