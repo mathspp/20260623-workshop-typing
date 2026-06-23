@@ -5,13 +5,16 @@ Use a `TypedDict` to encode the structure of the dictionaries that can be added 
 from typing import Any, TypedDict, NotRequired
 from enum import StrEnum
 
+
 class Role(StrEnum):
     USER = "user"
     ASSISTANT = "assistant"
 
+
 class Content(TypedDict):
     type: str
     text: str
+
 
 class Message(TypedDict):
     role: Role
@@ -26,11 +29,11 @@ context.append(
         "role": Role.ASSISTANT,
         "content": [
             {
-                "type": "txt",
+                "type": "text",
                 "text": "Sure, here's a joke:\n",
             },
             {
-                "type": "txt",
+                "type": "text",
                 "text": "What's brown and sticky..? A stick!",
             }
         ],
