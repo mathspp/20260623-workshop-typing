@@ -19,9 +19,7 @@ class Document:
 
     def __getitem__(self, line_index: int | slice) -> str | list[str]:
         text = self.path.read_text().splitlines()
-        contents = text[line_index]
-        if isinstance(line_index, int):
-            reveal_type(contents)
+        return text[line_index]
 
 
 doc = Document(Path(__file__))
