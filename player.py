@@ -2,7 +2,12 @@
 Part of the implementation of a game.
 """
 
+from enum import StrEnum, auto
 from typing import Any
+
+
+class Action(StrEnum):
+
 
 
 def process_action(
