@@ -19,7 +19,7 @@ def process_action(
     *args: int | str,
 ) -> dict[str, Any]:
     match action:
-        case "move":
+        case Action.MOVE:
             dx, dy = args
             x, y = player_status["position"]
             return {
@@ -27,18 +27,18 @@ def process_action(
                 "position": (x + dx, y + dy),
             }
 
-        case "talk":
+        case Action.TALK:
             message = args[0]
             print(f'{player_status["nick"]} says: {message}')
             return player_status
 
-        case "sleep":
+        case Action.SLEEP:
             return {
                 **player_status,
                 "status_condition": "sleeping",
             }
 
-        case "level_up":
+        case Action.LEVEL_UP:
             return {
                 **player_status,
                 "level": player_status["level"] + 1,
