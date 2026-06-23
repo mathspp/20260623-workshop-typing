@@ -13,14 +13,27 @@ class Action(StrEnum):
     LEVEL_UP = auto()
 
 
-def process_action(player_status: dict[str, Any], action: Literal[Action.MOVE], dx: int, dy: int) -> dict[str, Any]: ...
+def process_action(
+    player_status: dict[str, Any],
+    action: Literal[Action.MOVE],
+    dx: int, dy: int,
+) -> dict[str, Any]: ...
 
-def process_action(player_status: dict[str, Any], action: Action, *args: int | str) -> dict[str, Any]: ...
+def process_action(
+    player_status: dict[str, Any],
+    action: Literal[Action.TALK],
+    message: str,
+) -> dict[str, Any]: ...
 
-def process_action(player_status: dict[str, Any], action: Action, *args: int | str) -> dict[str, Any]: ...
+def process_action(
+    player_status: dict[str, Any],
+    action: Literal[Action.SLEEP],
+) -> dict[str, Any]: ...
 
-def process_action(player_status: dict[str, Any], action: Action, *args: int | str) -> dict[str, Any]: ...
-
+def process_action(
+    player_status: dict[str, Any],
+    action: Literal[Action.LEVEL_UP],
+) -> dict[str, Any]: ...
 
 def process_action(
     player_status: dict[str, Any],
