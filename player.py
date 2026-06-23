@@ -15,7 +15,7 @@ class Action(StrEnum):
 
 def process_action(
     player_status: dict[str, Any],
-    action: Literal["move", "talk", "sleep"],
+    action: Action,
     *args: int | str,
 ) -> dict[str, Any]:
     match action:
@@ -44,6 +44,6 @@ player = {
     "position": (3, 0),
 }
 process_action(player, Action.MOVE, 1, 1)
-process_action(player, "talk", "Hello!")
-process_action(player, "sleep")
-process_action(player, "level_up")
+process_action(player, Action.TALK, "Hello!")
+process_action(player, Action.SLEEP)
+process_action(player, Action.LEVEL_UP)
