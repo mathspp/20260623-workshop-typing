@@ -2,11 +2,11 @@
 Use a `TypedDict` to encode the structure of the dictionaries that can be added to the list `context`.
 """
 
-from typing import Any, TypedDict, NotRequired
+from typing import Any, TypedDict, NotRequired, Literal
 
 
 class ContentDict(TypedDict):
-    type: str
+    type: Literal["text"]
     text: str
 
 
@@ -23,11 +23,11 @@ context.append(
         "role": "assistant",
         "content": [
             {
-                "type": "text",
+                "type": "txt",
                 "text": "Sure, here's a joke:\n",
             },
             {
-                "type": "text",
+                "type": "txt",
                 "text": "What's brown and sticky..? A stick!",
             }
         ],
