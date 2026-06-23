@@ -19,7 +19,6 @@ class Message(TypedDict):
     status: NotRequired[str]
 
 
-
 context: list[Message] = []
 
 context.append(
