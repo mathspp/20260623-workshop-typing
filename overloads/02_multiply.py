@@ -7,8 +7,14 @@ Even with the overloads, the body of `multiply` shows an error. Can you get rid 
 Don't spend more than 5 minutes on that.
 """
 
-from typing import reveal_type
+from typing import overload, reveal_type
 
+@overload
+def multiply(left: int, right: int) -> int: ...
+@overload
+def multiply(left: int, right: str) -> str: ...
+@overload
+def multiply(left: str, right: int) -> str: ...
 
 def multiply(left: int | str, right: int | str) -> int | str:
     return left * right
