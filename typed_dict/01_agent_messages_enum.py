@@ -24,7 +24,7 @@ context: list[Message] = []
 
 context.append(
     {
-        "role": "assistant",
+        "role": Role.ASSISTANT.value,
         "content": [
             {
                 "type": "txt",
@@ -42,7 +42,7 @@ context.append(
 
 context.append(
     {
-        "role": "user",
+        "role": Role.USER.value,
         "content": "Tell me a joke.",
     }
 )
