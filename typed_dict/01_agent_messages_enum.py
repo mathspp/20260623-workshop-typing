@@ -14,7 +14,7 @@ class Content(TypedDict):
     text: str
 
 class Message(TypedDict):
-    role: Role 
+    role: Role
     content: str | list[Content]
     status: NotRequired[str]
 
